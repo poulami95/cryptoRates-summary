@@ -15,7 +15,7 @@
     "type": "git",
     "url": "https://github.com/poulami95/cryptoRates-summary.git"
   },
-  "homepage": "https://github.com/poulami95/cryptoRates-summary",
+  "homepage": "https://poulami95.github.io/cryptoRates-summary",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
