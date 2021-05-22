@@ -1,0 +1,21 @@
+.headerWrapper {
+  background-image: linear-gradient(to bottom, #48d1cc, #afeeee, #e0ffff);
+  color: #2f4f4f;
+  text-align: left;
+  font-family: "Segoe UI";
+  width: 100%;
+}
+.headerLogo {
+  padding: 1% 1% 0 1%;
+  height: auto;
+  float: left;
+}
+.headerLogo img {
+  width: 35px;
+}
+.headerText {
+  padding: 1% 0 1% 0%;
+  font-size: 24px;
+  font-weight: bold;
+  font-style: italic;
+}
