@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/cryptoRates-summary/static/css/main.abf27b80.chunk.css",
-    "main.js": "/cryptoRates-summary/static/js/main.661cc1f8.chunk.js",
-    "main.js.map": "/cryptoRates-summary/static/js/main.661cc1f8.chunk.js.map",
+    "main.js": "/cryptoRates-summary/static/js/main.059c7d5b.chunk.js",
+    "main.js.map": "/cryptoRates-summary/static/js/main.059c7d5b.chunk.js.map",
     "runtime-main.js": "/cryptoRates-summary/static/js/runtime-main.d55f637d.js",
     "runtime-main.js.map": "/cryptoRates-summary/static/js/runtime-main.d55f637d.js.map",
     "static/js/2.914c0a92.chunk.js": "/cryptoRates-summary/static/js/2.914c0a92.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.d55f637d.js",
     "static/js/2.914c0a92.chunk.js",
     "static/css/main.abf27b80.chunk.css",
-    "static/js/main.661cc1f8.chunk.js"
+    "static/js/main.059c7d5b.chunk.js"
   ]
 }
