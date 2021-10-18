@@ -1,0 +1,35 @@
+.cards-outer-wrapper{
+    width:300px;
+    height:350px;
+    background-image: linear-gradient(to bottom right, #48d1cc, #afeeee, #eaffff,#eafafa);
+    color: #2f4f4f;
+  /*   text-align: left; */
+    font-family: "Segoe UI";
+}
+.card-header-text{
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+.card-content li{
+    text-align: left;
+    list-style: none;
+}
+.card-content{
+    flex-flow: wrap;
+    display: flex;
+    flex-direction: column;
+    word-break: break-all;
+}
+.card-content a:hover{
+    text-decoration: underline;
+    font-weight: bold;
+}
+.card-content a:visited{
+    text-decoration:none;
+    fcolor: #2f4f4f;
+}
+.title-name{
+    font-style: italic;
+    font-size: 16px;
+}

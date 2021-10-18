@@ -1,6 +1,7 @@
 import "./App.css";
 import Header from "./components/contents/Header/Header";
 import { useEffect } from "react";
+import CurrencyCards from "./components/contents/CurrencyCards";
 
 function App() {
   useEffect(() => {
@@ -9,6 +10,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <CurrencyCards/>
     </div>
   );
 }
