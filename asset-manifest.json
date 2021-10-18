@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/cryptoRates-summary/static/css/main.abf27b80.chunk.css",
-    "main.js": "/cryptoRates-summary/static/js/main.059c7d5b.chunk.js",
-    "main.js.map": "/cryptoRates-summary/static/js/main.059c7d5b.chunk.js.map",
-    "runtime-main.js": "/cryptoRates-summary/static/js/runtime-main.d55f637d.js",
-    "runtime-main.js.map": "/cryptoRates-summary/static/js/runtime-main.d55f637d.js.map",
-    "static/js/2.914c0a92.chunk.js": "/cryptoRates-summary/static/js/2.914c0a92.chunk.js",
-    "static/js/2.914c0a92.chunk.js.map": "/cryptoRates-summary/static/js/2.914c0a92.chunk.js.map",
-    "static/js/3.2827ffd3.chunk.js": "/cryptoRates-summary/static/js/3.2827ffd3.chunk.js",
-    "static/js/3.2827ffd3.chunk.js.map": "/cryptoRates-summary/static/js/3.2827ffd3.chunk.js.map",
+    "main.css": "/cryptoRates-summary/static/css/main.e083494e.chunk.css",
+    "main.js": "/cryptoRates-summary/static/js/main.2fffddd4.chunk.js",
+    "main.js.map": "/cryptoRates-summary/static/js/main.2fffddd4.chunk.js.map",
+    "runtime-main.js": "/cryptoRates-summary/static/js/runtime-main.399dc26b.js",
+    "runtime-main.js.map": "/cryptoRates-summary/static/js/runtime-main.399dc26b.js.map",
+    "static/js/2.21058e57.chunk.js": "/cryptoRates-summary/static/js/2.21058e57.chunk.js",
+    "static/js/2.21058e57.chunk.js.map": "/cryptoRates-summary/static/js/2.21058e57.chunk.js.map",
+    "static/js/3.a310829e.chunk.js": "/cryptoRates-summary/static/js/3.a310829e.chunk.js",
+    "static/js/3.a310829e.chunk.js.map": "/cryptoRates-summary/static/js/3.a310829e.chunk.js.map",
     "index.html": "/cryptoRates-summary/index.html",
-    "static/css/main.abf27b80.chunk.css.map": "/cryptoRates-summary/static/css/main.abf27b80.chunk.css.map",
-    "static/js/2.914c0a92.chunk.js.LICENSE.txt": "/cryptoRates-summary/static/js/2.914c0a92.chunk.js.LICENSE.txt",
+    "static/css/main.e083494e.chunk.css.map": "/cryptoRates-summary/static/css/main.e083494e.chunk.css.map",
+    "static/js/2.21058e57.chunk.js.LICENSE.txt": "/cryptoRates-summary/static/js/2.21058e57.chunk.js.LICENSE.txt",
     "static/media/cryptocurrency.4b4aa565.png": "/cryptoRates-summary/static/media/cryptocurrency.4b4aa565.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.d55f637d.js",
-    "static/js/2.914c0a92.chunk.js",
-    "static/css/main.abf27b80.chunk.css",
-    "static/js/main.059c7d5b.chunk.js"
+    "static/js/runtime-main.399dc26b.js",
+    "static/js/2.21058e57.chunk.js",
+    "static/css/main.e083494e.chunk.css",
+    "static/js/main.2fffddd4.chunk.js"
   ]
 }
