@@ -6,6 +6,9 @@
   /*   text-align: left; */
     font-family: "Segoe UI";
 }
+.card-logo-wrapper{
+    padding-top:15px;
+}
 .card-header-text{
     text-align: center;
     font-weight: bold;
@@ -14,6 +17,9 @@
 .card-content li{
     text-align: left;
     list-style: none;
+}
+.title-value{
+    font-weight: bold;
 }
 .card-content{
     flex-flow: wrap;

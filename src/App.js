@@ -1,7 +1,8 @@
 import "./App.css";
 import Header from "./components/contents/Header/Header";
 import { useEffect } from "react";
-import CurrencyCards from "./components/contents/CurrencyCards";
+/* import CurrencyCards from "./components/contents/CurrencyCards"; */
+import CardGenerators from "./components/contents/CardGenerators";
 
 function App() {
   useEffect(() => {
@@ -10,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <CurrencyCards/>
+      <CardGenerators/>
     </div>
   );
 }

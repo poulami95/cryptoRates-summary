@@ -4,10 +4,12 @@ import siteLogo from "../../../assets/images/cryptocurrency.png";
 function Header() {
   return (
     <div className="headerWrapper">
-      <div className="headerLogo">
-        <img src={siteLogo} alt="" title="Site Logo" />
+      <div className="header-border-wrapper">
+        <div className="headerLogo">
+          <img src={siteLogo} alt="" title="Site Logo" />
+        </div>
+        <div className="headerText">EXCHANGE RATES</div>
       </div>
-      <div className="headerText">EXCHANGE RATES</div>
     </div>
   );
 }

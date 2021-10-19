@@ -1,5 +1,5 @@
 .headerWrapper {
-  background-image: linear-gradient(to bottom, #48d1cc, #afeeee, #e0ffff);
+  /* background-image: linear-gradient(to bottom, #48d1cc, #afeeee, #e0ffff); */
   color: #2f4f4f;
   text-align: left;
   font-family: "Segoe UI";
@@ -18,4 +18,8 @@
   font-size: 24px;
   font-weight: bold;
   font-style: italic;
+}
+.header-border-wrapper{
+  border-top:1px solid #2f4f4f;
+  border-bottom:1px solid #2f4f4f;
 }

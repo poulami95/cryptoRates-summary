@@ -24,7 +24,7 @@ class CurrencyCards extends Component{
                 res.map((item,index)=>{
                     return(
                         <div key={index}>
-                            <Cards currency={item}/>
+                            <Cards currency={item }/>
                         </div>
                     )
                 })
