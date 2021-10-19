@@ -2,6 +2,7 @@ import { Component } from 'react';
 import getIndividualData from '../../../utils/getIndividualData';
 import Cards from '../../Cards';
 import './CardGeneratorsStyle.css'
+import loader from '../../../assets/gifs/BitcoinGoldCoin.gif';
 
 class CardGenerators extends Component{
     constructor(props){
@@ -42,7 +43,7 @@ class CardGenerators extends Component{
             return(
                 res.map((item,index)=>{
                     return(
-                        <div key={index}>
+                        <div key={index} className="individual-card-wrapper">
                             <Cards currency = {item}/>
                         </div>
                     )
@@ -52,9 +53,17 @@ class CardGenerators extends Component{
     }
     render(){
         return(
-            <div className="contents-wrapper">
-                {this.generateCurrentCards(this.state.currencyApiRes)}
-            </div>
+            <>
+                {this.state.currencyApiRes.length>0?
+                <div className="contents-wrapper">
+                    {this.generateCurrentCards(this.state.currencyApiRes)}
+                </div>
+                :
+                <div className="loader-wrapper">
+                    <img src={loader} style={{height:"100px",width:"80px"}}></img>
+                </div>
+                }
+            </>
         )
     }
 }

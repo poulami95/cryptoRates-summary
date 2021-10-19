@@ -1,10 +1,13 @@
 .cards-outer-wrapper{
-    width:300px;
-    height:350px;
+    width:310px;
+    height:370px;
     background-image: linear-gradient(to bottom right, #48d1cc, #afeeee, #eaffff,#eafafa);
     color: #2f4f4f;
-  /*   text-align: left; */
     font-family: "Segoe UI";
+}
+.cards-outer-wrapper:hover{
+    transform: translate(0 , -10px);
+    transition: transform 0.1s ease-in-out;
 }
 .card-logo-wrapper{
     padding-top:15px;
