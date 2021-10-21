@@ -3,6 +3,7 @@ import Header from "./components/contents/Header/Header";
 import { useEffect } from "react";
 /* import CurrencyCards from "./components/contents/CurrencyCards"; */
 import CardGenerators from "./components/contents/CardGenerators";
+import Footer from "./components/contents/Footer/Footer";
 
 function App() {
   useEffect(() => {
@@ -11,7 +12,10 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <CardGenerators/>
+      <div className="content-wrapper">
+        <CardGenerators/>
+      </div>
+      <Footer/>
     </div>
   );
 }

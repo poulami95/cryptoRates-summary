@@ -9,6 +9,11 @@
     transform: translate(0 , -10px);
     transition: transform 0.1s ease-in-out;
 }
+.cards-outer-wrapper a,a:hover,a:visited{
+    text-decoration: none;
+    color: #2f4f4f;
+    cursor:pointer
+}
 .card-logo-wrapper{
     padding-top:15px;
 }
