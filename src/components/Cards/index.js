@@ -1,5 +1,5 @@
 import "./cards.css";
-export default (props) => {
+export default const Card = (props) => {
 
     const {currency} = props
     const url = `https://www.coingecko.com/en/coins/${currency.id}`
