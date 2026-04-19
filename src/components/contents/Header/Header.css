@@ -1,26 +1,54 @@
 .headerWrapper {
-  /* background-image: linear-gradient(to bottom, #48d1cc, #afeeee, #e0ffff); */
-  color: #2f4f4f;
-  text-align: left;
-  font-family: "Segoe UI";
+  background: rgba(8, 10, 24, 0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #f1f5f9;
+  font-family: "Segoe UI", sans-serif;
   width: 100%;
-  background: #F9FBF0 ;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(108, 99, 255, 0.18);
 }
-.headerLogo {
-  padding: 1% 1% 0 1%;
-  height: auto;
-  float: left;
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  padding: 14px 5%;
+  gap: 14px;
 }
+
 .headerLogo img {
-  width: 35px;
+  width: 38px;
+  height: 38px;
+  filter: drop-shadow(0 0 10px rgba(108, 99, 255, 0.7));
 }
+
+.header-text-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
 .headerText {
-  padding: 1% 0 1% 0%;
-  font-size: 24px;
-  font-weight: bold;
-  font-style: italic;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  background: linear-gradient(135deg, #a78bfa, #48d1cc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
-.header-border-wrapper{
-  border-top:1px solid #2f4f4f;
-  border-bottom:1px solid #2f4f4f;
+
+.header-subtitle {
+  font-size: 10px;
+  color: #475569;
+  letter-spacing: 2.5px;
+  margin-top: 2px;
+  font-weight: 500;
+}
+
+.header-glow-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #6c63ff 30%, #48d1cc 70%, transparent);
 }

@@ -1,31 +1,79 @@
 import "./cards.css";
-const Cards = (props) => {
 
-    const {currency} = props
-    const url = `https://www.coingecko.com/en/coins/${currency.id}`
-    return(
-    <div className="cards-outer-wrapper">
-        <a href={url} style={{textDecoration:"none"}} target="_blank" rel="noreferrer">
-            <div className="card-logo-wrapper">
-                <img src={currency.image} style={{height:"100px",width:"100px"}} alt=""></img>
-            </div>
-            <span className="card-header-text">{currency.name.toUpperCase()}</span> 
-            <div className="card-content">
-            <ul>
-                <li><span className="title-name">SYMBOL : </span><span className="title-value">{currency.symbol}</span></li>
-                <li><span className="title-name">MARKET CAP RANK : </span><span className="title-value">{currency.market_cap_rank}</span></li>
-                <li><span className="title-name">PRICE : <span className="title-value">${currency.current_price}</span></span></li>
-                <li><span className="title-name">LAST UPDATED : </span><span>{new Date(currency.last_updated).toLocaleDateString()}</span></li>
-                    <li><span className="title-name">MARKET CAP : </span><span>${currency.market_cap}</span></li> 
-                    <li><span className="title-name">HIGHEST IN 24H : </span><span className="title-value">${currency.high_24h}</span></li>
-                    <li><span className="title-name">LOWEST IN 24H : </span><span className="title-value">${currency.low_24h}</span></li>
-                    {/*<li><span className="title-name">PRICE CHANGE IN 24H : </span><span>${currency.price_change_24h}</span></li>
-                < li><span className="title-name">OFFICIAL WEBSITE : </span><span><a href={currency.website} style={{textDecoration:"none",color:"#2f4f4f"}} target="_blank" rel="noreferrer">{currency.website}</a></span></li> */}
-                </ul> 
-            </div>
-        </a>   
-    </div>
-    )
-    
-}
-export default Cards
+const formatPrice = (price) => {
+    if (price == null) return 'N/A';
+    if (price >= 1) return price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    if (price >= 0.0001) return price.toFixed(6);
+    return price.toExponential(4);
+};
+
+const formatMarketCap = (cap) => {
+    if (!cap) return 'N/A';
+    if (cap >= 1e12) return `$${(cap / 1e12).toFixed(2)}T`;
+    if (cap >= 1e9) return `$${(cap / 1e9).toFixed(2)}B`;
+    if (cap >= 1e6) return `$${(cap / 1e6).toFixed(2)}M`;
+    return `$${cap.toLocaleString()}`;
+};
+
+const Cards = ({ currency }) => {
+    const url = `https://www.coingecko.com/en/coins/${currency.id}`;
+    const priceChange = currency.price_change_percentage_24h;
+    const isPositive = priceChange >= 0;
+
+    return (
+        <div className="cards-outer-wrapper">
+            <a href={url} target="_blank" rel="noreferrer">
+                <div className="card-top-row">
+                    <span className="rank-badge">#{currency.market_cap_rank || '—'}</span>
+                    {priceChange != null && (
+                        <span className={`change-badge ${isPositive ? 'positive' : 'negative'}`}>
+                            {isPositive ? '▲' : '▼'} {Math.abs(priceChange).toFixed(2)}%
+                        </span>
+                    )}
+                </div>
+
+                <div className="card-logo-wrapper">
+                    <img
+                        src={currency.image}
+                        alt={currency.name}
+                        onError={(e) => { e.target.style.display = 'none'; }}
+                    />
+                </div>
+
+                <div className="card-name-section">
+                    <span className="card-name">{currency.name}</span>
+                    <span className="card-symbol">{currency.symbol.toUpperCase()}</span>
+                </div>
+
+                <div className="card-price">${formatPrice(currency.current_price)}</div>
+
+                <div className="card-divider" />
+
+                <div className="card-stats">
+                    <div className="stat-row">
+                        <span className="stat-label">Market Cap</span>
+                        <span className="stat-value">{formatMarketCap(currency.market_cap)}</span>
+                    </div>
+                    {currency.high_24h != null && (
+                        <div className="stat-row">
+                            <span className="stat-label">24h High</span>
+                            <span className="stat-value green">${formatPrice(currency.high_24h)}</span>
+                        </div>
+                    )}
+                    {currency.low_24h != null && (
+                        <div className="stat-row">
+                            <span className="stat-label">24h Low</span>
+                            <span className="stat-value red">${formatPrice(currency.low_24h)}</span>
+                        </div>
+                    )}
+                    <div className="stat-row">
+                        <span className="stat-label">Updated</span>
+                        <span className="stat-value">{new Date(currency.last_updated).toLocaleDateString()}</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    );
+};
+
+export default Cards;
