@@ -16,6 +16,9 @@
     "type": "git",
     "url": "https://github.com/poulami95/cryptoRates-summary.git"
   },
+  "engines": {
+    "node": ">=20.x"
+  },
   "homepage": "https://poulami95.github.io/cryptoRates-summary",
   "scripts": {
     "start": "react-scripts start",
