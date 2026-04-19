@@ -19,7 +19,7 @@
   "engines": {
     "node": ">=20.x"
   },
-  "homepage": "https://poulami95.github.io/cryptoRates-summary",
+  "homepage": ".",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
