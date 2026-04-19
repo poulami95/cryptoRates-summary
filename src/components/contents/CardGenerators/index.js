@@ -1,70 +1,57 @@
 import { Component } from 'react';
 import getIndividualData from '../../../utils/getIndividualData';
 import Cards from '../../Cards';
-import './CardGeneratorsStyle.css'
+import './CardGeneratorsStyle.css';
 import loader from '../../../assets/gifs/BitcoinGoldCoin.gif';
 
-class CardGenerators extends Component{
-    constructor(props){
+class CardGenerators extends Component {
+    constructor(props) {
         super(props);
         this.state = {
-            currencyApiRes : []
+            currencyApiRes: [],
+            error: null,
+        };
+    }
+
+    async componentDidMount() {
+        const data = await getIndividualData();
+        if (data.length === 0) {
+            this.setState({ error: 'Unable to fetch market data. Please try again later.' });
+        } else {
+            this.setState({ currencyApiRes: data });
         }
     }
-    async componentDidMount(){
-        let apiData = []
-        let currencySymbols= [
-            'ethereum',
-            'bitcoin',
-            'binance-usd',
-            'tether',
-            'cardano',
-            'dogecoin',
-            'shiba-inu',
-            'solana',
-            'wrapped-bitcoin',
-            'litecoin',
-            'stellar',
-            'filecoin'
-        ];
-        //console.log(currencySymbols);
-        for(let i=0;i<currencySymbols.length;i++){
-            //console.log(currencySymbols[i]);
-            let res = await getIndividualData(currencySymbols[i])
-            apiData[i] = res
-        }
-        //console.log(apiData)
-        this.setState({
-            currencyApiRes : apiData
-        })
-    }
-    generateCurrentCards = (res) =>{
-        if(res.length > 0){
-            return(
-                res.map((item,index)=>{
-                    return(
-                        <div key={index} className="individual-card-wrapper">
-                            <Cards currency = {item}/>
-                        </div>
-                    )
-                })
-            )
-        }
-    }
-    render(){
-        return(
-            <>
-                {this.state.currencyApiRes.length>0?
-                <div className="contents-wrapper">
-                    {this.generateCurrentCards(this.state.currencyApiRes)}
-                </div>
-                :
+
+    render() {
+        const { currencyApiRes, error } = this.state;
+
+        if (error) {
+            return (
                 <div className="loader-wrapper">
-                    <img src={loader} style={{height:"100px",width:"80px"}} alt=""></img>
+                    <p className="error-text">{error}</p>
                 </div>
-                }
-            </>
-        )
+            );
+        }
+
+        if (currencyApiRes.length === 0) {
+            return (
+                <div className="loader-wrapper">
+                    <img src={loader} style={{ height: '100px', width: '80px' }} alt="Loading" />
+                    <p className="loader-text">Fetching live market data...</p>
+                </div>
+            );
+        }
+
+        return (
+            <div className="contents-wrapper">
+                {currencyApiRes.map((item, index) => (
+                    <div key={index} className="individual-card-wrapper">
+                        <Cards currency={item} />
+                    </div>
+                ))}
+            </div>
+        );
     }
 }
+
 export default CardGenerators;

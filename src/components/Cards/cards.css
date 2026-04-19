@@ -1,49 +1,172 @@
-.cards-outer-wrapper{
-    width:310px;
-    height:370px;
-    background-image: linear-gradient(to bottom right, #48d1cc, #afeeee, #eaffff,#eafafa);
-    color: #2f4f4f;
-    font-family: "Segoe UI";
+.cards-outer-wrapper {
+    width: 280px;
+    background: linear-gradient(145deg, rgba(18, 22, 48, 0.92), rgba(12, 16, 36, 0.96));
+    border: 1px solid rgba(108, 99, 255, 0.18);
+    border-radius: 20px;
+    color: #e2e8f0;
+    font-family: "Segoe UI", sans-serif;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
-.cards-outer-wrapper:hover{
-    transform: translate(0 , -10px);
-    transition: transform 0.1s ease-in-out;
+
+.cards-outer-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #6c63ff, #48d1cc, #6c63ff);
+    background-size: 200% 100%;
 }
-.cards-outer-wrapper a,a:hover,a:visited{
+
+.cards-outer-wrapper:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 24px 48px rgba(108, 99, 255, 0.28), 0 8px 24px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    border-color: rgba(108, 99, 255, 0.45);
+}
+
+.cards-outer-wrapper a {
     text-decoration: none;
-    color: #2f4f4f;
-    cursor:pointer
+    color: inherit;
+    display: block;
+    padding: 20px 20px 18px;
 }
-.card-logo-wrapper{
-    padding-top:15px;
+
+.cards-outer-wrapper a:hover,
+.cards-outer-wrapper a:visited {
+    text-decoration: none;
+    color: inherit;
 }
-.card-header-text{
+
+.card-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.rank-badge {
+    background: rgba(108, 99, 255, 0.18);
+    color: #a78bfa;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(108, 99, 255, 0.28);
+}
+
+.change-badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.change-badge.positive {
+    background: rgba(72, 187, 120, 0.15);
+    color: #68d391;
+    border: 1px solid rgba(72, 187, 120, 0.28);
+}
+
+.change-badge.negative {
+    background: rgba(252, 96, 96, 0.15);
+    color: #fc8181;
+    border: 1px solid rgba(252, 96, 96, 0.28);
+}
+
+.card-logo-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 14px;
+}
+
+.card-logo-wrapper img {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 14px rgba(108, 99, 255, 0.45));
+    transition: filter 0.3s ease;
+}
+
+.cards-outer-wrapper:hover .card-logo-wrapper img {
+    filter: drop-shadow(0 0 20px rgba(72, 209, 204, 0.6));
+}
+
+.card-name-section {
     text-align: center;
-    font-weight: bold;
-    font-size: 18px;
+    margin-bottom: 12px;
 }
-.card-content li{
-    text-align: left;
-    list-style: none;
+
+.card-name {
+    display: block;
+    font-size: 17px;
+    font-weight: 700;
+    color: #f1f5f9;
+    letter-spacing: 0.4px;
 }
-.title-value{
-    font-weight: bold;
+
+.card-symbol {
+    display: block;
+    font-size: 12px;
+    color: #64748b;
+    margin-top: 4px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
-.card-content{
-    flex-flow: wrap;
+
+.card-price {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, #a78bfa, #48d1cc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.5px;
+}
+
+.card-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(108, 99, 255, 0.35), rgba(72, 209, 204, 0.35), transparent);
+    margin-bottom: 14px;
+}
+
+.card-stats {
     display: flex;
     flex-direction: column;
-    word-break: break-all;
+    gap: 9px;
 }
-.card-content a:hover{
-    text-decoration: underline;
-    font-weight: bold;
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-.card-content a:visited{
-    text-decoration:none;
-    fcolor: #2f4f4f;
+
+.stat-label {
+    font-size: 11px;
+    color: #475569;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-weight: 500;
 }
-.title-name{
-    font-style: italic;
-    font-size: 16px;
+
+.stat-value {
+    font-size: 13px;
+    font-weight: 600;
+    color: #94a3b8;
+}
+
+.stat-value.green {
+    color: #68d391;
+}
+
+.stat-value.red {
+    color: #fc8181;
 }
