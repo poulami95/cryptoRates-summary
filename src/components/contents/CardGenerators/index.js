@@ -60,7 +60,7 @@ class CardGenerators extends Component{
                 </div>
                 :
                 <div className="loader-wrapper">
-                    <img src={loader} style={{height:"100px",width:"80px"}}></img>
+                    <img src={loader} style={{height:"100px",width:"80px"}} alt=""></img>
                 </div>
                 }
             </>
