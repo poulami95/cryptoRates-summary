@@ -1,13 +1,13 @@
 import "./cards.css";
-export default function(props){
+export default (props) => {
 
     const {currency} = props
     const url = `https://www.coingecko.com/en/coins/${currency.id}`
     return(
     <div className="cards-outer-wrapper">
-        <a href={url} style={{textDecoration:"none"}} target="_blank">
+        <a href={url} style={{textDecoration:"none"}} target="_blank" rel="noreferrer">
             <div className="card-logo-wrapper">
-                <img src={currency.image} style={{height:"100px",width:"100px"}}></img>
+                <img src={currency.image} style={{height:"100px",width:"100px"}} alt=""></img>
             </div>
             <span className="card-header-text">{currency.name.toUpperCase()}</span> 
             <div className="card-content">
